@@ -1,10 +1,10 @@
 # This is a general web scraper project
 #### currently scrapper scraps data from: www.myhome.ge
 
-#requirements 
+# requirements 
 - Python 3.6 and above
 
-#installation
+# installation
 in order to run script you need to install `pipenv`
 
 ```bash 
@@ -17,7 +17,7 @@ after that run this command:
 ```
 it will install all dependencies 
 
-#usage
+# usage
 After everything is installed you can run following command:
 
 ```bash
