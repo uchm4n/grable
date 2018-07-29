@@ -1,27 +1,30 @@
 import csv
+import os
 import requests as http
 from datetime import datetime
 from bs4 import BeautifulSoup
 
 
 class Grab:
-    now = datetime.now().__format__('%y-%m-%d_%H:%M:%S')
+    file_name = 'myhome-{}.csv'.format(datetime.now().__format__('%y-%m-%d_%H:%M:%S'))
 
     def __init__(self, url, page, products, curr_page=1):
         self.url = url
         self.products = products
         self.currPage = curr_page
         self.page = page
-        return
 
     def run(self):
         # product loop
-        with open('myhome-{}.csv'.format(self.now), 'w+') as csvfile:
-            writer = csv.DictWriter(csvfile, fieldnames=[
+        with open(self.file_name, 'a') as csvfile:
+            writer = csv.DictWriter(csvfile, delimiter=';', fieldnames=[
                 'UserID', 'Date', 'Type', 'Address', 'Floor', 'Rooms', 'Area (m²)',
                 'Price', 'Phone', 'Images'
             ])
-            writer.writeheader()
+
+            if os.stat(self.file_name).st_size == 0:
+                writer.writeheader()
+
             for product in self.products:
                 user_id = product['user_id']
                 date = product['order_date']
