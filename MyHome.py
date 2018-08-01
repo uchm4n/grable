@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 
 class Grab:
-    file_name = 'myhome-{}.csv'.format(datetime.now().__format__('%y-%m-%d_%H:%M:%S'))
+    file_name = 'myhome-{}.csv'.format(datetime.now().__format__('%y-%m-%d_%H%M%S'))
 
     def __init__(self, url, page, products, curr_page=1):
         self.url = url
