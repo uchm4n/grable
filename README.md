@@ -14,9 +14,6 @@ after that run this command:
 
 ```bash
     pipenv install
-    pipenv --py
-    # this will give you python virtual path on you local machine:
-    /home/$YOUR_NAME_HERE$/.local/share/virtualenvs/grable-mQ0mNUZb/bin/python
 ```
 it will install all dependencies 
 
@@ -24,7 +21,7 @@ it will install all dependencies
 After everything is installed you can run following command:
 
 ```bash
-    /home/$YOUR_NAME_HERE$/.local/share/virtualenvs/grable-mQ0mNUZb/bin/python main.py myhome
+    pipenv run main.py myhome
 ```
 
 progress bar will show you script progression.
